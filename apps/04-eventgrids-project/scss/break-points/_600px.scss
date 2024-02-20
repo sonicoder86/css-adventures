@@ -1,0 +1,100 @@
+@use '../general-styles/padding';
+@use '../general-styles/gradients';
+@use '../general-styles/colors';
+@use '../general-styles/typography';
+
+@media screen and (max-width: 600px) {
+  .padd {
+    padding: padding.padding-d-v('sc') padding.padding-d-h('s');
+  }
+
+  .header {
+    &__nav {
+      flex-direction: column;
+      align-items: flex-start;
+
+      &--logo {
+        align-self: stretch;
+      }
+
+      &--cta {
+        align-self: center;
+      }
+
+      &--links {
+        flex-direction: column;
+
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 100vh;
+
+        background-image: gradients.gradient('primary');
+        padding: padding.padding-d-v('l') padding.padding-d-h('l');
+        transform: translateX(-100rem);
+        transition: all 0.3s ease-out;
+
+        z-index: 10;
+      }
+
+      .display-nav {
+        transform: translateX(0);
+      }
+
+      &--hamburger {
+        position: fixed;
+        top: 3.8rem;
+        right: 3rem;
+        height: 4rem;
+        width: 7rem;
+        cursor: pointer;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        row-gap: 0.5rem;
+
+        padding: 0 1rem;
+        background-image: gradients.gradient('primary');
+        border-radius: 0.5rem;
+
+        z-index: 11;
+
+        .line-1,
+        .line-2 {
+          height: 0.2rem;
+          background-color: colors.color-theme('1');
+          transition: all 0.3s ease-in-out;
+        }
+
+        .line-1 {
+          width: 70%;
+          align-self: flex-end;
+        }
+
+        .line-2 {
+          width: 100%;
+          align-self: center;
+        }
+
+        .line-1-toggled {
+          transform: rotate(45deg) translateX(-0.5rem) translateY(1rem);
+          width: 50%;
+        }
+
+        .line-2-toggled {
+          transform: rotate(-45deg) translateX(0.4rem) translateY(-0.2rem);
+          width: 50%;
+        }
+      }
+    }
+
+    &__hero {
+      &--location {
+        font-size: typography.font-size-st('s');
+      }
+    }
+  }
+
+
+}
