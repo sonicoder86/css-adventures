@@ -1,0 +1,8 @@
+@use '../general-styles/colors';
+@use '../general-styles/typography';
+
+.sec-sub-para {
+  font-size: typography.font-size-st('sc');
+  font-weight: typography.font-weight('bold');
+  color: rgba(colors.color-type('2'), 0.4);
+}

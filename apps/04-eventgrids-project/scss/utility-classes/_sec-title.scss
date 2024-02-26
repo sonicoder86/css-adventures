@@ -1,0 +1,10 @@
+@use '../general-styles/colors';
+@use '../general-styles/typography';
+
+.sec-title {
+  font-size: typography.font-size-d('sc');
+  font-weight: typography.font-weight('black-fw');
+  color: colors.color-type('2');
+
+  text-align: center;
+}
